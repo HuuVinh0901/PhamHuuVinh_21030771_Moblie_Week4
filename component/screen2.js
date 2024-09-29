@@ -8,7 +8,7 @@ const screen2 = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [isAgreed, setIsAgreed] = useState(false);
-
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const handleSignUp = () => {
         if (!email || !pwd || !isAgreed) {
             Toast.show({
@@ -16,13 +16,13 @@ const screen2 = ({ navigation }) => {
                 text1: 'Thông báo',
                 text2: 'Vui lòng điền đầy đủ thông tin và đồng ý với điều khoản.',
             });
-            return; 
+            return;
         }
         users.push({ email, pwd });
         navigation.navigate("Screen3", { users });
         console.log(users);
     }
-    
+
     return (
         <ScrollView>
             <View style={{ flex: 1 }}>
@@ -49,10 +49,13 @@ const screen2 = ({ navigation }) => {
             <View style={{ flexDirection: 'row', borderWidth: 1, borderRadius: 10, marginTop: 15, marginHorizontal: 20, paddingVertical: 5 }}>
                 <Image source={require('../assets/img/lock.png')} style={{ height: 25, width: 25, marginLeft: 5 }} />
                 <TextInput style={{ paddingLeft: 5 }} placeholder='Enter your password'
-                    secureTextEntry={true} value={pwd} onChangeText={setPwd}
+                    secureTextEntry={!isPasswordVisible} value={pwd} onChangeText={setPwd}
 
                 />
-                <Image source={require('../assets/img/eye.png')} style={{ height: 25, width: 25, marginLeft: 120 }} />
+                <TouchableOpacity onPress={() => setIsPasswordVisible(!isPasswordVisible)}>
+                    <Image source={require('../assets/img/eye.png')} style={{ height: 25, width: 25, marginLeft: 120 }} />
+                </TouchableOpacity>
+
             </View>
             <View style={{ flexDirection: 'row', marginLeft: 20, marginTop: 20 }}>
                 <CheckBox
@@ -67,7 +70,7 @@ const screen2 = ({ navigation }) => {
             >
                 <Text style={{ color: 'white' }}>Contiunue</Text>
             </TouchableOpacity>
-            
+
         </ScrollView>
     )
 }
