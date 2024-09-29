@@ -1,8 +1,12 @@
 import { View, Text, ScrollView, Image,TextInput,TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react'
-// const users=[];
+import Toast from 'react-native-toast-message';
+const sampleUsers = [
+    { email: 'user1', pwd: '123' },
+    { email: 'user2', pwd: '123' },
+]
 const screen3 = ({route, navigation}) => {
-    const { users } = route.params || {}; 
+    const { users = sampleUsers } = route.params || {};
     const[loginEmail,setLoginEmail]=useState('');
     const[loginPwd,setLoginPwd]=useState('');
     console.log("Users in Screen3:", users);
@@ -13,7 +17,11 @@ const screen3 = ({route, navigation}) => {
             navigation.navigate("Screen4");
         }
         else{
-            Alert.alert("Sai email hoặc mật khẩu")
+            Toast.show({
+                type: 'error',
+                text1: 'Thông báo',
+                text2: 'Sai email hoặc mật khẩu',
+            });
         }
     
     }
@@ -28,14 +36,14 @@ const screen3 = ({route, navigation}) => {
                 </View>
                 <Text style={{marginLeft:20,marginTop:40,fontWeight:'bold'}}>Email</Text>
                 <View style={{ flexDirection: 'row', borderRadius: 10, marginTop: 5, marginHorizontal: 20, paddingVertical: 5,backgroundColor:'#C0C0C0' }}>
-                    <Image source={require('../assets/img/Vector.png')} style={{ height: 25, width: 25}} />
+                <Image source={require('../assets/img/Vector.png')} style={{height:23,width:26,marginLeft:5}}/>
                     <TextInput style={{ paddingLeft: 5, flex: 1 }} placeholder='Enter your email address' 
                     value={loginEmail} onChangeText={setLoginEmail}
                     />
                 </View>
                 <Text style={{marginLeft:20,marginTop:15,fontWeight:'bold'}}>Password</Text>
                 <View style={{ flexDirection: 'row',  borderRadius: 10, marginTop: 5, marginHorizontal: 20, paddingVertical: 5,backgroundColor:'#C0C0C0' }}>
-                    <Image source={require('../assets/img/lock.png')} style={{ height: 25, width: 25 }} />
+                    <Image source={require('../assets/img/lock.png')} style={{ height: 25, width: 25,marginLeft:5 }} />
                     <TextInput secureTextEntry={true} style={{ paddingLeft: 5 }} placeholder='Enter your password' 
                     value={loginPwd} onChangeText={setLoginPwd}
                     />
