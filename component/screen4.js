@@ -94,7 +94,9 @@ const screen4 = () => {
             </View>
             <View style={{ flexDirection: 'row', marginLeft: 20, marginTop: 10 }}>
                 {products.map((product) => (
-                    <TouchableOpacity style={{ borderWidth: 1, borderRadius: 10 }} key={product.id} onPress={() => handleProductSelect(product)}
+                    <TouchableOpacity style={{ borderWidth: 1, borderRadius: 10  ,
+                    borderColor: seletedProduct.id === product.id ? '#248282' : '#ccc'}}
+                    key={product.id} onPress={() => handleProductSelect(product)}
                     >
                         <Image style={{ height: 50, width: 50 }} source={product.img} />
                     </TouchableOpacity>
@@ -134,7 +136,7 @@ const screen4 = () => {
                     <TouchableOpacity style={{ height: 35, width: 35, borderWidth: 1, borderRadius: 15 }}
                         onPress={decreaseQuantity}
                     >
-                        <Text style={{ marginHorizontal: 12, marginVertical: 5 }}>X</Text>
+                        <Text style={{ marginHorizontal: 12, marginVertical: 5 }}>-</Text>
                     </TouchableOpacity>
                     <Text style={{ marginLeft: 10, marginTop: 5 }}>{Quantity}</Text>
                     <TouchableOpacity
