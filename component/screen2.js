@@ -1,10 +1,9 @@
-
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity,TextInput } from 'react-native'
 import React, { useState } from 'react'
-import { CheckBox, TextInput } from 'react-native-web'
+import { Checkbox } from 'expo-checkbox';
 import Toast from 'react-native-toast-message';
 const users = [];
-const screen2 = ({ navigation }) => {
+const Screen2 = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
@@ -59,7 +58,7 @@ const screen2 = ({ navigation }) => {
 
             </View>
             <View style={{ flexDirection: 'row', marginLeft: 20, marginTop: 20 }}>
-                <CheckBox
+                <Checkbox
                     value={isAgreed}
                     onValueChange={setIsAgreed}
                 />
@@ -76,4 +75,4 @@ const screen2 = ({ navigation }) => {
     )
 }
 
-export default screen2
+export default Screen2
