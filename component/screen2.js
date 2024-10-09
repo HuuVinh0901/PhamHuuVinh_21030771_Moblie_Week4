@@ -18,7 +18,7 @@ const screen2 = ({ navigation }) => {
     <ScrollView>
         <View style={{flex:1}}>
             <View style={{paddingTop:100,paddingLeft:150,}}> 
-                <Image source={require('../assets/img/Image 19.png')}/>
+                <Image source={require('../assets/img/Image_19.png')}/>
             </View>
         </View>
         <View style={{alignContent:'center',justifyContent:'center',paddingLeft:100,paddingTop:10}}>
@@ -32,13 +32,13 @@ const screen2 = ({ navigation }) => {
             />
         </View>
         <View style={{flexDirection:'row',borderWidth:1,borderRadius:10,marginTop:15,marginHorizontal:20,paddingVertical:5}}>
-            <Image source={require('../assets/img/Vector.png')} style={{height:25,width:25}}/>
+            <Image source={require('../assets/img/Vector.png')} style={{height:23,width:26,marginLeft:5}}/>
             <TextInput style={{paddingLeft:5,flex:1}} placeholder='Enter your email address'
                 value={email} onChangeText={setEmail}
             />
         </View>
         <View style={{flexDirection:'row',borderWidth:1,borderRadius:10,marginTop:15,marginHorizontal:20,paddingVertical:5}}>
-            <Image source={require('../assets/img/lock.png')} style={{height:25,width:25}}/>
+            <Image source={require('../assets/img/lock.png')} style={{height:25,width:25,marginLeft:5}}/>
             <TextInput style={{paddingLeft:5}} placeholder='Enter your password'
                 secureTextEntry={true} value={pwd} onChangeText={setPwd}
             

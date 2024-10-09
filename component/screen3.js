@@ -21,7 +21,7 @@ const screen3 = ({route, navigation}) => {
         <ScrollView>
             <View style={{ flex: 1 }}>
                 <View >
-                    <Image style={{ width: '100%' }} source={require('../assets/img/Image 20.png')} />
+                    <Image style={{ width: '100%' }} source={require('../assets/img/Image_20.png')} />
                 </View>
                 <View style={{ paddingLeft: 20, paddingTop: 10 }}>
                     <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Welcome!</Text>

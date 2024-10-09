@@ -7,7 +7,7 @@ const screen1 = ({ navigation }) => {
         <ScrollView>
             <View style={{ flex: 1, paddingHorizontal:20}}>
                 <View >
-                <Image source={require('../assets/img/Container 17.png')} />
+                <Image source={require('../assets/img/Container_17.png')} />
                 </View>
                 
                 <View style={{justifyContent:'flex-start',alignItems:'flex-start'}}>
